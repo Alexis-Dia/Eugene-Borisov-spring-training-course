@@ -6,9 +6,8 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example4/context.xml");
-        while (true) {
-            Thread.sleep(100);
-            context.getBean(Quoter.class).sayQuote();
-        }
+        //During this time you have set true flag in jvisualvm.exe
+        Thread.sleep(10000);
+        context.getBean(Quoter.class).sayQuote();
     }
 }
