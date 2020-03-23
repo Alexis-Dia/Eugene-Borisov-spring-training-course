@@ -3,7 +3,9 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
 
-    <bean class="example1.quoters.TerminatorQuoter" id="terminatorQuoter">
+    <bean class="example2.quoters.InjectRandomIntAnnotationBeanPostProcessor" />
+
+    <bean class="example2.quoters.TerminatorQuoter" id="terminatorQuoter">
         <property name="message" value="I'll will be back"/>
     </bean>
 
