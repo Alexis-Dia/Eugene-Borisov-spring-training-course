@@ -3,7 +3,7 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
 
-    <bean class="quoters.TerminatorQuoter" id="terminatorQuoter">
+    <bean class="example1.quoters.TerminatorQuoter" id="terminatorQuoter">
         <property name="message" value="I'll will nbe back"/>
     </bean>
 
