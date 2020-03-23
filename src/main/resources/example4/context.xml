@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+    <bean class="example4.quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
+
+    <bean class="example4.quoters.TerminatorQuoter" id="terminatorQuoter">
+        <property name="message" value="I'll will be back"/>
+    </bean>
+
+</beans>
