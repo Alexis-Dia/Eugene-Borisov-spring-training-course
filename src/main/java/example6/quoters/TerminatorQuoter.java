@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
  * @author Alexey Druzik on 3/21/2020
  */
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
