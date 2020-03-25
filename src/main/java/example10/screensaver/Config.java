@@ -1,4 +1,4 @@
-package example9.screensave;
+package example10.screensaver;
 
 import org.springframework.context.annotation.*;
 
@@ -9,7 +9,7 @@ import java.util.Random;
  * @author Alexey Druzik on 3/25/2020
  */
 @Configuration
-@ComponentScan(basePackages = "example8.screensaver")
+@ComponentScan(basePackages = "example10.screensaver")
 public class Config {
     @Bean
     @Scope(value = "prototype")

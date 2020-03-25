@@ -1,4 +1,4 @@
-package example9.screensave;
+package example10.screensaver;
 
 import javax.swing.*;
 import java.awt.*;

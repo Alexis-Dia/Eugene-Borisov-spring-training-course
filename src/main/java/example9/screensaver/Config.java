@@ -1,4 +1,4 @@
-package example8.screensaver;
+package example9.screensaver;
 
 import org.springframework.context.annotation.*;
 
@@ -9,10 +9,10 @@ import java.util.Random;
  * @author Alexey Druzik on 3/25/2020
  */
 @Configuration
-@ComponentScan(basePackages = "example8.screensaver")
+@ComponentScan(basePackages = "example9.screensaver")
 public class Config {
     @Bean
-    @Scope(value = "prototype")
+    @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
     public Color color() {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
