@@ -10,6 +10,7 @@ import java.util.Random;
  * @author Alexey Druzik on 3/25/2020
  */
 @org.springframework.stereotype.Component
+//@Scope("prototype")
 //@Service - the same
 public class ColorFrame extends JFrame {
     @Autowired
