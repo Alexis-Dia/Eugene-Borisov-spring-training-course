@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * @author Alexey Druzik on 3/25/2020
  */
-@org.springframework.stereotype.Component
+//@org.springframework.stereotype.Component
 //@Service - the same
 public abstract class ColorFrame extends JFrame {
 
