@@ -3,6 +3,7 @@ package example10.screensaverMy;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.swing.*;
+import java.util.Random;
 
 /**
  * @author Alexey Druzik on 3/25/2020
@@ -10,14 +11,14 @@ import javax.swing.*;
 //@org.springframework.stereotype.Component
 //@Service - the same
 public class ColorFrame extends JFrame {
-    @Autowired
+    //@Autowired
     MyColor myColor;
 
-    //@Autowired
-/*    public ColorFrame(MyColor myColor) {
+    @Autowired
+    public ColorFrame(MyColor myColor) {
         Random random = new Random();
         this.myColor = myColor;
-    }*/
+    }
 
     public ColorFrame() {
         setSize(200, 200);
