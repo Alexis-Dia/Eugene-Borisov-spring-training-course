@@ -14,7 +14,7 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        Field[] declaredFields = bean.getClass().getDeclaredFields();
+        Field[] declaredFields = bean.getClass().getDeclaredFields(); //bean.getClass() - can return proxy
         for (Field declaredField : declaredFields) {
             InjectRandomInt injectRandomInt = declaredField.getAnnotation(InjectRandomInt.class);
             if (injectRandomInt != null) {
