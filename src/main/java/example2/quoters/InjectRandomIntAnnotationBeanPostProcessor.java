@@ -14,7 +14,7 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        Field[] declaredFields = bean.getClass().getDeclaredFields(); //bean.getClass() - can't return proxy, also bean.getClass() - it's bad solution
+        Field[] declaredFields = bean.getClass().getDeclaredFields(); //bean.getClass() - can't return proxy
         for (Field declaredField : declaredFields) {
             InjectRandomInt injectRandomInt = declaredField.getAnnotation(InjectRandomInt.class);
             if (injectRandomInt != null) {
@@ -32,7 +32,8 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        bean.getClass().getDeclaredFields(); //bean.getClass() - can return proxy
+        bean.getClass().getDeclaredFields(); //bean.getClass() - can return proxy, also bean.getClass() - it's bad solution.
+        // Probably good solution is to use BeanFactoryPostProcessor.
         return bean;
     }
 }
