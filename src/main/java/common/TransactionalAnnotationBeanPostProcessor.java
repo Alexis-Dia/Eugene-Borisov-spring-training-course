@@ -17,7 +17,6 @@ import java.util.Map;
 @Component
 public class TransactionalAnnotationBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
-    private Map<String, Object> map2 = new HashMap<>();
 
 
     @Override
