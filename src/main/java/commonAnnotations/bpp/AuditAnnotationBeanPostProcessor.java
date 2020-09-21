@@ -1,6 +1,6 @@
-package common.bpp;
+package commonAnnotations.bpp;
 
-import common.Audit;
+import commonAnnotations.Audit;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
@@ -16,6 +16,12 @@ public class AuditAnnotationBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+
+        return bean;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         Class beanClass = bean.getClass();
         Method[] methods = beanClass.getMethods();
         for (Method method: methods) {
@@ -27,12 +33,6 @@ public class AuditAnnotationBeanPostProcessor implements BeanPostProcessor {
                 });
             }
         }
-        return bean;
-    }
-
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-
         return bean;
     }
 

@@ -8,8 +8,8 @@
     <bean class="example5.quoters.ProfilingHandlerBeanPostProcessor"/>
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="example5.quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <bean class="common.bpp.TransactionalAnnotationBeanPostProcessor"/>
-    <bean class="common.bpp.AuditAnnotationBeanPostProcessor"/>
+    <bean class="commonAnnotations.bpp.TransactionalAnnotationBeanPostProcessor"/>
+    <bean class="commonAnnotations.bpp.AuditAnnotationBeanPostProcessor"/>
 
     <bean class="example5.quoters.TerminatorQuoter" id="terminatorQuoter">
         <property name="message" value="I'll will be back"/>

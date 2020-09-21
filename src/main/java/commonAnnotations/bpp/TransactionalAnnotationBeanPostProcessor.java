@@ -1,6 +1,6 @@
-package common.bpp;
+package commonAnnotations.bpp;
 
-import common.Transactional;
+import commonAnnotations.Transactional;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;

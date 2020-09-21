@@ -1,11 +1,11 @@
-package common;
+package commonAnnotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * @author Alexey Druzik on 21.09.2020
+ * Created by Alexey on 17/06/2016.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Audit {
+public @interface Transactional {
 }
