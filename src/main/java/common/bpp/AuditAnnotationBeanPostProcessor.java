@@ -3,6 +3,7 @@ package common.bpp;
 import common.Audit;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -10,6 +11,7 @@ import java.lang.reflect.Proxy;
 /**
  * @author Alexey Druzik on 21.09.2020
  */
+@Component
 public class AuditAnnotationBeanPostProcessor implements BeanPostProcessor {
 
     @Override
