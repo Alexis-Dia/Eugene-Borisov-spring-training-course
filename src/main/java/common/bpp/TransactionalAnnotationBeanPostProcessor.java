@@ -1,5 +1,6 @@
-package common;
+package common.bpp;
 
+import common.Transactional;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;
@@ -17,6 +18,7 @@ import java.util.Map;
 @Component
 public class TransactionalAnnotationBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
+    private Map<String, Object> map2 = new HashMap<>();
 
 
     @Override
@@ -25,6 +27,11 @@ public class TransactionalAnnotationBeanPostProcessor implements BeanPostProcess
         final Method[] methods = beanClass.getMethods();
         for (Method method: methods) {
             if (method.isAnnotationPresent(Transactional.class)) {
+                Object o1 = Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(),(proxy, method1, args) -> {
+                    Object retVal = method1.invoke(bean, args);
+                    return retVal;
+                });
+                map2.put(beanName, o1);
                 map.put(beanName, beanClass);
             }
         }
@@ -44,12 +51,13 @@ public class TransactionalAnnotationBeanPostProcessor implements BeanPostProcess
                     return retVal;
                 });
             }
-            return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(),(proxy, method, args) -> {
+            Object o2 = Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(),(proxy, method, args) -> {
                 System.out.println("*************TRANSACTION OPENED****************");
                 Object retVal = method.invoke(bean, args);
                 System.out.println("*************TRANSACTION COMMITED****************");
                 return retVal;
             });
+            return o2;
         }
         return bean;
     }

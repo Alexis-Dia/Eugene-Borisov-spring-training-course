@@ -4,8 +4,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Created by Alexey on 17/06/2016.
+ * @author Alexey Druzik on 21.09.2020
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Transactional {
+public @interface Audit {
 }

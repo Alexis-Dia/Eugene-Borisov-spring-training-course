@@ -30,7 +30,8 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
                         /*Won't work! But it will work if we use cjlib
                         method.invoke();*/
                         Object bean = context.getBean(name);
-                        Method currentMethod = bean.getClass().getMethod(method.getName(), method.getParameterTypes());
+                        Class<?> proxyClass = bean.getClass();
+                        Method currentMethod = proxyClass.getMethod(method.getName());
                         currentMethod.invoke(bean);
                     }
                 }
