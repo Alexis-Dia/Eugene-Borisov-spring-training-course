@@ -42,7 +42,7 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
     }
 
     /*Here is my shorter way*/
-    /*@Override
+/*    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         ApplicationContext context = event.getApplicationContext();
         String[] names = context.getBeanDefinitionNames();
@@ -53,8 +53,7 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
                 Method[] methods = originalClass.getMethods();
                 for (Method method : methods) {
                     if(method.isAnnotationPresent(PostProxy.class)) {
-                        Class<?> proxyClass = bean.getClass();
-                        Method currentMethod = proxyClass.getMethod(method.getName());
+                        Method currentMethod = originalClass.getMethod(method.getName());
                         currentMethod.invoke(bean);
                     }
                 }
