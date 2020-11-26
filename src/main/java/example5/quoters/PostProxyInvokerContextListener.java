@@ -15,6 +15,7 @@ import java.lang.reflect.Method;
 public class PostProxyInvokerContextListener implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private ConfigurableListableBeanFactory factory;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         ApplicationContext context = event.getApplicationContext();
