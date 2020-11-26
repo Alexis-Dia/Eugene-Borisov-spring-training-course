@@ -42,7 +42,7 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
         }
     }
 
-    /*Here is my shorter way*/
+    /*Here is my shorter way. It's not working by mistake. Try to understand what's the problem. */
 /*    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         ApplicationContext context = event.getApplicationContext();
